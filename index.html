@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H.E.R.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="theme-decor" aria-hidden="true">
+    <span class="decor-icon love-only decor-love-1">♥</span>
+    <span class="decor-icon love-only decor-love-2">♡</span>
+    <span class="decor-icon love-only decor-love-3">♥</span>
+    <span class="decor-icon love-only decor-love-4">♡</span>
+    <span class="decor-icon love-only decor-love-5">♥</span>
+    <span class="decor-icon love-only decor-love-6">♡</span>
+    <span class="decor-icon birthday-only decor-cake-1">🎂</span>
+    <span class="decor-icon birthday-only decor-cake-2">🎂</span>
+    <span class="decor-icon birthday-only decor-cake-3">🎂</span>
+    <span class="decor-icon birthday-only decor-cake-4">🎂</span>
+    <span class="decor-icon birthday-only decor-cake-5">🎂</span>
+  </div>
+  <main class="app">
+    <header class="hero">
+      <div class="logo-mark" aria-hidden="true">💜</div>
+      <h1 class="title">H.E.R.</h1>
+      <p class="tagline">Heartfelt&nbsp;Elapsed&nbsp;Remembrance</p>
+      <p class="hero-write">She remembers when it all began.<br />Every moment matters. Every day counts.</p>
+    </header>
+
+    <section class="card builder">
+      <form id="form" class="fields">
+        <label class="field">
+          <span class="label">Your name</span>
+          <input id="name" type="text" placeholder="e.g. Daniel" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span class="label">Their name</span>
+          <input id="person" type="text" placeholder="e.g. Jessica" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span class="label">When it began</span>
+          <input id="date" type="date" />
+        </label>
+
+        <div class="choose">
+          <span class="label">What is this?</span>
+          <div id="category" class="pills" role="radiogroup" aria-label="Category">
+            <button type="button" class="pill active" data-cat="love" data-emoji="❤️" aria-pressed="true">Love</button>
+            <button type="button" class="pill" data-cat="friendship" data-emoji="🤝" aria-pressed="false">Friendship</button>
+            <button type="button" class="pill" data-cat="birthday" data-emoji="🎂" aria-pressed="false">Birthday</button>
+            <button type="button" class="pill" data-cat="anniversary" data-emoji="💍" aria-pressed="false">Anniversary</button>
+            <button type="button" class="pill" data-cat="firstmeeting" data-emoji="✨" aria-pressed="false">First met</button>
+            <button type="button" class="pill" data-cat="other" data-emoji="🌸" aria-pressed="false">Other</button>
+          </div>
+        </div>
+
+        <div class="choose">
+          <span class="label">Say it</span>
+          <div id="tone" class="pills" role="radiogroup" aria-label="Tone">
+            <button type="button" class="pill active" data-tone="sweet" aria-pressed="true">Sweet</button>
+            <button type="button" class="pill" data-tone="funny" aria-pressed="false">Funny</button>
+            <button type="button" class="pill" data-tone="heartfelt" aria-pressed="false">Heartfelt</button>
+            <button type="button" class="pill" data-tone="sarcastic" aria-pressed="false">Sarcastic</button>
+          </div>
+        </div>
+
+        <button type="submit" class="cta">Remember it with me</button>
+      </form>
+    </section>
+
+    <section id="result" class="card result hidden">
+      <div class="result-emoji" id="resultEmoji">❤️</div>
+      <p class="result-label" id="resultLabel">LOVE</p>
+      <p class="duration" id="duration"></p>
+      <p class="message" id="message"></p>
+      <p class="since" id="since"></p>
+      <div class="actions">
+        <button id="keepsake" class="ghost">💌 Make a keepsake</button>
+        <button id="save" class="ghost">💾 Save this date</button>
+        <button id="share" class="ghost">📤 Share</button>
+      </div>
+    </section>
+
+    <section class="card keepsake hidden" id="keepsakeWrap">
+      <div id="cardCanvas"></div>
+      <div class="actions">
+        <button id="download" class="cta">Download keepsake</button>
+        <button id="keepsakeClose" class="ghost">Close</button>
+      </div>
+    </section>
+
+    <section id="saved" class="card saved hidden">
+      <h2 class="saved-title">Saved dates</h2>
+      <ul id="savedList" class="saved-list"></ul>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
